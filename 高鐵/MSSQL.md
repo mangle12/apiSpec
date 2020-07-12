@@ -1,0 +1,15 @@
+# MSSQL 
+###### tags: `SQL`
+
+### 產生十萬筆資料
+```
+SET NOCOUNT ON
+DECLARE @MyData TABLE( Id INT, ItemName NVARCHAR(100)) ;
+DECLARE @Ptr INT = 0 ;
+
+WHILE @Ptr < 100000
+BEGIN
+	INSERT INTO @MyData VALUES ( @Ptr , LEFT( CAST( ABS( CHECKSUM(  CAST( NEWID() AS VARCHAR(128) ) )) AS VARCHAR ) + '000000000' , 10 ));
+	SET @Ptr += 1 ;
+END ;
+```

@@ -1,0 +1,12 @@
+/* ... */
+:root {
+  --content-max-width: 67.5rem;
+  --base-font-family: "Noto Sans SC", sans-serif;;
+}
+
+
+.lang-info {
+  color: #31708f !important;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
