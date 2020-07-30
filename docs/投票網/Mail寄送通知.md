@@ -12,6 +12,7 @@
 | Required Request Header | Content-Type:application/json; charset=UTF-8 |
 | 測試 環境 API 地址      | /vote/schedule/mail                          |
 | 通用格式                | 否                                           |
+| authorization           | Bearer { token }                             |
 
 ## 請求
 
@@ -22,8 +23,8 @@
 | text     | string   | 500  | Y    | mail 的內容 |
 | work_no  | string   | 500  | Y    | 作業代號    |
 
-
 ### 作業代號簡述
+
 | 作業代號 | 作業功能      |
 | -------- | ------------- |
 | VOTS01   | 活動通知 Mail |
@@ -32,7 +33,6 @@
 | VOTS04   | 聯繫我們      |
 | VOTS05   | 保留 1        |
 | VOTS06   | 保留 2        |
-
 
 ### Request 範例
 
