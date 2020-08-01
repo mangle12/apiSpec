@@ -18,15 +18,16 @@
 
 ### Request 欄位
 
-| 欄位名稱  | 資料型別 | 長度 | 必須 | 說明                            |
-| --------- | -------- | ---- | ---- | ------------------------------- |
-| work_no   | string   | 6    | Y    | 作業代號                        |
-| title     | string   | 不限 | O    | 投票主旨                        |
-| starttime | string   | 20   | O    | 投票起始日 fmt yyyy-mm-dd hh:nn |
-| endtimie  | string   | 20   | O    | 投票截止日 fmt yyyy-mm-dd hh:nn |
-| winner    | string   | 不限 | O    | 獲勝選項                        |
-| setup1    | string   | 不限 | O    | 是否匿名 ..直接顯示白話文       |
-| setup2    | string   | 不限 | O    | 一人幾票 ..直接顯示白話文       |
+| 欄位名稱  | 資料型別      | 長度 | 必須 | 說明                            |
+| --------- | ------------- | ---- | ---- | ------------------------------- |
+| work_no   | string        | 6    | Y    | 作業代號                        |
+| title     | string        | 不限 | O    | 投票主旨                        |
+| starttime | string        | 20   | O    | 投票起始日 fmt yyyy-mm-dd hh:nn |
+| endtimie  | string        | 20   | O    | 投票截止日 fmt yyyy-mm-dd hh:nn |
+| winner    | string        | 不限 | O    | 獲勝選項                        |
+| setup1    | string        | 不限 | O    | 是否匿名 ..直接顯示白話文       |
+| setup2    | string        | 不限 | O    | 一人幾票 ..直接顯示白話文       |
+| mailto    | array[string] | -    | Y    | 字串陣列，需將用戶代號帶回      |  |
 
 O 代表選填
 
