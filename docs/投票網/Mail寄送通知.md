@@ -12,16 +12,23 @@
 | Required Request Header | Content-Type:application/json; charset=UTF-8 |
 | 測試 環境 API 地址      | /vote/schedule/mail                          |
 | 通用格式                | 否                                           |
-| authorization           | Bearer { token }                             |
+| authorization           | Bearer { token                               |  |
 
 ## 請求
 
 ### Request 欄位
 
-| 欄位名稱 | 資料型別 | 長度 | 必須 | 說明        |
-| -------- | -------- | ---- | ---- | ----------- |
-| text     | string   | 500  | Y    | mail 的內容 |
-| work_no  | string   | 500  | Y    | 作業代號    |
+| 欄位名稱  | 資料型別 | 長度 | 必須 | 說明                            |
+| --------- | -------- | ---- | ---- | ------------------------------- |
+| work_no   | string   | 6    | Y    | 作業代號                        |
+| title     | string   | 不限 | O    | 投票主旨                        |
+| starttime | string   | 20   | O    | 投票起始日 fmt yyyy-mm-dd hh:nn |
+| endtimie  | string   | 20   | O    | 投票截止日 fmt yyyy-mm-dd hh:nn |
+| winner    | string   | 不限 | O    | 獲勝選項                        |
+| setup1    | string   | 不限 | O    | 是否匿名 ..直接顯示白話文       |
+| setup2    | string   | 不限 | O    | 一人幾票 ..直接顯示白話文       |
+
+O 代表選填
 
 ### 作業代號簡述
 
@@ -38,8 +45,13 @@
 
 ```json
 {
-  "text": "你低头 眉间落下场雪 我抚平情愫万千 帘外响起 霜将琴声冷却 刹那间 过往事皆湮灭 江南又梦烟雨 长河流入故里",
-  "work_no": "VOTS01"
+  "work_no": "VOTS01",
+  "title": "天不生我許寧夜，此道萬古如長夜",
+  "starttime ": "2020-08-01 09:18",
+  "endtimie": "2020-08-02 09:18",
+  "winner": "許寧夜",
+  "setup1": "匿名投票",
+  "setup2": "一人4票"
 }
 ```
 
@@ -55,5 +67,5 @@
   "code": "0",
   "msg": "succese",
   "error": ""
-}
+|
 ```
