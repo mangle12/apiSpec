@@ -13,3 +13,7 @@ watch kubectl get pods
 kubectl get pods
 ```
 
+### 執行 mongo import
+kubectl create job --from=cronjob/report-mongo-importer report-mongo-importer-20200811001
+kubectl delete job <>
+kubectl logs <>
