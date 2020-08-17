@@ -20,19 +20,17 @@
 
 | 欄位名稱名稱 | 資料型別 | 長度 | 必須 | 說明           |
 | ------------ | -------- | ---- | ---- | -------------- |
-| company      | string   | 1    | Y    | 99             |
 | action       | string   | 1    | Y    | 1.修改 2 刪除  |
-| type_no      | string   | 40   | Y    | 修改代號       |
-| type_name    | string   | 20   | Y    | 預計修改的名稱 |
+| typeNo       | string   | 40   | Y    | 修改代號       |
+| typeName     | string   | 20   | O    | 預計修改的名稱 |
 
 ### Request 範例
 
 ```json
 {
-  "company": "99",
   "action": "1",
-  "type_no": "A00001",
-  "type_name": "其他問題"
+  "typeNo": "A00001",
+  "typeName": "其他問題"
 }
 ```
 

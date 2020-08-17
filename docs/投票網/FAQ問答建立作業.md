@@ -20,7 +20,7 @@
 
 | 欄位名稱 | 資料型別 | 長度 | 必須 | 說明              |
 | -------- | -------- | ---- | ---- | ----------------- |
-| type_no  | string   | 40   | Y    | form.FAQ 分類代號 |
+| typeNo   | string   | 40   | Y    | form.FAQ 分類代號 |
 | quest    | string   | 60   | Y    | form.輸入的問題   |
 | ans      | string   | 1000 | Y    | form.輸入的答案   |
 | priority | string   | 2    | Y    | form.優先級       |
@@ -29,7 +29,7 @@
 
 ```json
 {
-  "type_no": "202007220003",
+  "typeNo": "202007220003",
   "quest": "pan piano 是誰",
   "ans": "「Pan Piano」同樣也是鋼琴YouTuber，一開始都是以日常穿著入鏡，從未露臉，不過她的好身材經常受到討論，Pan也開始在彈鋼琴時cosplay動漫角色，多套爆乳裝扮讓粉絲看得目不轉睛，追蹤人數直線上升，目前有65.7萬人訂閱頻道",
   "priority": "1"

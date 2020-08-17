@@ -18,22 +18,22 @@
 
 ### Request 欄位
 
-| 欄位名稱名稱 | 資料型別 | 長度 | 必須 | 說明            |
-| ------------ | -------- | ---- | ---- | --------------- |
-| company      | string   | 1    | Y    | 99              |
-| action       | string   | 1    | Y    | 1. 修改 2. 刪除 |
-| type_no      | string   | 40   | Y    | 類別代號        |
-| quset        | string   | 20   | Y    | 問題            |
-| ans          | string   | 1    | Y    | 答案            |
-| priority     | string   | 1    | Y    | 優先級          |
+| 欄位名稱名稱 | 資料型別 | 長度 | 必須 | 說明                     |
+| ------------ | -------- | ---- | ---- | ------------------------ |
+| action       | string   | 1    | Y    | 1. 修改 2. 刪除          |
+| faqNo        | string   | 40   | Y    | FAQ 代號                 |
+| typeNo       | string   | 40   | O    | 類別代號 action = 1 必填 |
+| quset        | string   | 20   | O    | 問題 action = 1 必填     |
+| ans          | string   | 1    | O    | 答案 action = 1 必填     |
+| priority     | string   | 1    | O    | 優先級 action = 1 必填   |
 
 ### Request 範例
 
 ```json
 {
-  "company": "99",
   "action": "1",
-  "type_no": "20200720142103A0003",
+  "faqNo": "20200720142103A0003",
+  "typeNo": "20200720142103A0003",
   "quset": "pan piano為什麼收看率這麼高",
   "ans": "「Pan Piano」同樣也是鋼琴YouTuber，一開始都是以日常穿著入鏡，從未露臉，不過她的好身材經常受到討論，Pan也開始在彈鋼琴時cosplay動漫角色，多套爆乳裝扮讓粉絲看得目不轉睛，追蹤人數直線上升，目前有65.7萬人訂閱頻道",
   "priority": "11"
