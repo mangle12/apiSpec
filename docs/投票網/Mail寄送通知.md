@@ -12,7 +12,7 @@
 | Required Request Header | Content-Type:application/json; charset=UTF-8 |
 | 測試 環境 API 地址      | /vote/schedule/mail                          |
 | 通用格式                | 否                                           |
-| authorization           | Bearer { token                               |  |
+| authorization           | Bearer { token }                             |
 
 ## 請求
 
