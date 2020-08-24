@@ -20,14 +20,14 @@
 
 | 欄位名稱  | 資料型別 | 長度 | 必須 | 說明                            |
 | --------- | -------- | ---- | ---- | ------------------------------- |
-| work_no   | string   | 6    | Y    | 作業代號                        |
+| workNo    | string   | 6    | Y    | 作業代號                        |
 | title     | string   | 不限 | O    | 投票主旨                        |
 | starttime | string   | 20   | O    | 投票起始日 fmt yyyy-mm-dd hh:nn |
 | endtimie  | string   | 20   | O    | 投票截止日 fmt yyyy-mm-dd hh:nn |
 | winner    | string   | 不限 | O    | 獲勝選項                        |
 | setup1    | string   | 不限 | O    | 是否匿名 ..直接顯示白話文       |
 | setup2    | string   | 不限 | O    | 一人幾票 ..直接顯示白話文       |
-| act_no    | string   | -    | O    | 依作業需求傳入 單號             |
+| actNo     | string   | -    | O    | 依作業需求傳入 單號             |
 
 O 代表選填
 
@@ -46,14 +46,14 @@ O 代表選填
 
 ```json
 {
-  "work_no": "VOTS01",
+  "workNo": "VOTS01",
   "title": "天不生我許寧夜，此道萬古如長夜",
   "starttime ": "2020-08-01 09:18",
   "endtimie": "2020-08-02 09:18",
   "winner": "許寧夜",
   "setup1": "匿名投票",
   "setup2": "一人4票",
-  "act_no": "20200803140000A00001"
+  "actNo": "20200803140000A00001"
 }
 ```
 
