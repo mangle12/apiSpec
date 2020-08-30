@@ -22,7 +22,7 @@
 
 ```json
 {
-  "guid": "CIHUFRHEUFERUHFIUERGUERLWKDEFUDHW",
+  "guid": "42e29e35-b835-4a95-afaf-d4733bbedd7f",
   "staffsNo": "A00001"
 }
 ```
@@ -39,6 +39,6 @@
 
 ```json
 {
-  "url": "https://www.XXX.tw/repair?staffsNo=2005001&token=42e29e35-b835-4a95-afaf-d4733bbedd7f"
+  "url": "https://www.tpisoftware.com/vote/login/exec?staffsNo=A00001&guid=42e29e35-b835-4a95-afaf-d4733bbedd7f"
 }
 ```
