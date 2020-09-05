@@ -27,9 +27,11 @@
 | winner    | string   | 不限 | O    | 獲勝選項                        |
 | setup1    | string   | 不限 | O    | 是否匿名 ..直接顯示白話文       |
 | setup2    | string   | 不限 | O    | 一人幾票 ..直接顯示白話文       |
-| actNo     | string   | -    | O    | 依作業需求傳入 單號             |
+| actNo     | string   | 64   | O    | 依作業需求傳入 單號             |
+| subjet    | string   | 40   | M    | 作業代號 VOTS04、VOTS05 時必填  |
+| content   | string   | 4084 | M    | 作業代號 VOTS04、VOTS05 時必填  |
 
-O 代表選填
+> O 代表選填、M 條件性必填
 
 ### 作業代號簡述
 
@@ -39,7 +41,7 @@ O 代表選填
 | VOTS02   | 催票通知 Mail |
 | VOTS03   | 活動結束 Mail |
 | VOTS04   | 聯繫我們      |
-| VOTS05   | 保留 1        |
+| VOTS05   | 退審信件通知  |
 | VOTS06   | 保留 2        |
 
 ### Request 範例
