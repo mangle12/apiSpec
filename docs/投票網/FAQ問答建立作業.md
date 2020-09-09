@@ -22,7 +22,7 @@
 | -------- | -------- | ---- | ---- | ----------------- |
 | typeNo   | string   | 40   | Y    | form.FAQ 分類代號 |
 | quest    | string   | 60   | Y    | form.輸入的問題   |
-| ans      | string   | 1000 | Y    | form.輸入的答案   |
+| ans      | string   | 1000 | O    | form.輸入的答案   |
 | priority | string   | 2    | Y    | form.優先級       |
 
 ### Request 範例
