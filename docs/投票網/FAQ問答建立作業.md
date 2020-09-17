@@ -40,3 +40,11 @@
 
 > 簡單的回應訊息，來確定是否存檔成功
 > 使用通用格式 code 0 msg succese
+
+### Response 範例
+```json
+{
+  "code": 0,
+  "msg": "succese",
+  "error": ""
+```

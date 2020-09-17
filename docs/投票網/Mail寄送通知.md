@@ -68,7 +68,7 @@
 
 ```json
 {
-  "code": "0",
+  "code": 0,
   "msg": "succese",
   "error": ""
 |
