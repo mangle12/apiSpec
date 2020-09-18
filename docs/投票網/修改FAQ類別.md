@@ -41,7 +41,7 @@
 
 ```json
 {
-  "state": "200",
+  "state": 200,
   "msg": "succese",
   "error": "",
   "data": {}
