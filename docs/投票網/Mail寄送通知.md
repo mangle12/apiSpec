@@ -67,7 +67,9 @@
 
 ```json
 {
-  "code": 0,
+  "state": 200,
   "msg": "succese",
-  "error": ""
+  "error": "",
+  "data": {}
+}
 ```

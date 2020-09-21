@@ -15,7 +15,7 @@
 
 | 欄位名稱 | 資料型別 | 長度 | 必須 | 說明               |
 | -------- | -------- | ---- | ---- | ------------------ |
-| token     | string   | -    | Y    | ERP 發行的環境變數 |
+| token    | string   | -    | Y    | ERP 發行的環境變數 |
 | staffsNo | string   | 12   | Y    | 員工編號           |
 
 ### Request 範例
@@ -39,6 +39,11 @@
 
 ```json
 {
-  "url": "https://www.tpisoftware.com/home?staffsNo=A00001&token=42e29e35-b835-4a95-afaf-d4733bbedd7f"
+  "state": 200,
+  "msg": "succese",
+  "error": "",
+  "data": {
+    "url": "https://www.tpisoftware.com/home?staffsNo=A00001&token=42e29e35-b835-4a95-afaf-d4733bbedd7f"
+  }
 }
 ```

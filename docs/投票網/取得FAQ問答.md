@@ -26,18 +26,21 @@
 
 | 欄位名稱名稱 | 資料型別 | 長度 | 必須 | 說明     |
 | ------------ | -------- | ---- | ---- | -------- |
-| createDate  | string   | 8    | Y    | 建立時間 |
-| typeNo      | string   | 40   | Y    | 類別代號 |
-| typeName    | string   | 20   | Y    | 類別名稱 |
-| faqNo       | string   | 40   | Y    | 項目代號 |
-| faqQuest    | string   | 60   | Y    | 問題     |
-| faqAns      | string   | 1000 | Y    | 答案     |
+| createDate   | string   | 8    | Y    | 建立時間 |
+| typeNo       | string   | 40   | Y    | 類別代號 |
+| typeName     | string   | 20   | Y    | 類別名稱 |
+| faqNo        | string   | 40   | Y    | 項目代號 |
+| faqQuest     | string   | 60   | Y    | 問題     |
+| faqAns       | string   | 1000 | Y    | 答案     |
 | priority     | string   | 2    | Y    | 優先級   |
 
 ### Response 範例
 
 ```json
 {
+  "state": 200,
+  "msg": "succese",
+  "error": "",
   "data": [
     {
       "createDate": "20200720",

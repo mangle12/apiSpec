@@ -26,13 +26,16 @@
 
 | 欄位名稱名稱 | 資料型別 | 長度 | 必須 | 說明          |
 | ------------ | -------- | ---- | ---- | ------------- |
-| faqNo       | string   | 40    | Y    | FAQ type ID   |
-| faqName     | string   | 20    | Y    | FAQ type name |
+| faqNo        | string   | 40   | Y    | FAQ type ID   |
+| faqName      | string   | 20   | Y    | FAQ type name |
 
 ### Response 範例
 
 ```json
 {
+  "state": 200,
+  "msg": "succese",
+  "error": "",
   "data": [
     {
       "faqNo": "01",
