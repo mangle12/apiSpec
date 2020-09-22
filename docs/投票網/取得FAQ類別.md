@@ -26,8 +26,8 @@
 
 | 欄位名稱名稱 | 資料型別 | 長度 | 必須 | 說明          |
 | ------------ | -------- | ---- | ---- | ------------- |
-| faqtypeNo        | string   | 40   | Y    | FAQ type ID   |
-| faqtypeName      | string   | 20   | Y    | FAQ type name |
+| typeNo        | string   | 40   | Y    | FAQ type ID   |
+| typeName      | string   | 20   | Y    | FAQ type name |
 
 ### Response 範例
 
@@ -38,12 +38,12 @@
   "error": "",
   "data": [
     {
-      "faqtypeNo": "01",
-      "faqtypeName": "問題分類1"
+      "typeNo": "01",
+      "typeName": "問題分類1"
     },
     {
-      "faqtypeNo": "02",
-      "faqtypeName": "問題分類2"
+      "typeNo": "02",
+      "typeName": "問題分類2"
     }
   ]
 }
