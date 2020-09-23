@@ -8,7 +8,7 @@
 
 | 項目                    | 說明                                         |
 | ----------------------- | -------------------------------------------- |
-| Method                  | GET                                          |
+| Method                  | POST                                          |
 | Required Request Header | Content-Type:application/json; charset=UTF-8 |
 | 測試 環境 API 地址      | /vote/faq/QA                                 |
 | 通用格式                | 是                                           |
