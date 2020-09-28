@@ -1,4 +1,4 @@
-# ERP 驗證
+# ERP 轉導
 
 ## 規格
 
@@ -6,7 +6,7 @@
 | ----------------------- | -------------------------------------------- |
 | Method                  | GET                                          |
 | Required Request Header | Content-Type:application/json; charset=UTF-8 |
-| 測試 環境 API 地址      | /vote/login                                  |
+| 測試 環境 API 地址      | /vote/AcceptToken                            |
 | 通用格式                | 否                                           |
 
 ## 請求
