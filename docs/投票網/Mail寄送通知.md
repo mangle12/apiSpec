@@ -22,8 +22,8 @@
 | --------- | -------- | ---- | ---------- | --------------------------------------- |
 | workNo    | string   | 6    | Y          | 作業代號                                |
 | title     | string   | 不限 | 選填       | 投票主旨                                |
-| starttime | string   | 20   | 選填       | 投票起始日 fmt yyyy-mm-dd hh:nn         |
-| endtime   | string   | 20   | 選填       | 投票截止日 fmt yyyy-mm-dd hh:nn         |
+| starttime | string   | 20   | 選填       | 投票起始日 fmt yyyy-mm-dd hh:nn:ss      |
+| endtime   | string   | 20   | 選填       | 投票截止日 fmt yyyy-mm-dd hh:nn:ss      |
 | winner    | string   | 不限 | 選填       | 獲勝選項                                |
 | setup1    | string   | 不限 | 選填       | 是否匿名 ..直接顯示白話文               |
 | setup2    | string   | 不限 | 選填       | 一人幾票 ..直接顯示白話文               |
@@ -49,8 +49,8 @@
 {
   "workNo": "VOTS01",
   "title": "天不生我許寧夜，此道萬古如長夜",
-  "starttime ": "2020-08-01 09:18",
-  "endtime": "2020-08-02 09:18",
+  "starttime ": "2020-08-01 09:18:21",
+  "endtime": "2020-08-02 09:18:33",
   "winner": "許寧夜",
   "setup1": "匿名投票",
   "setup2": "一人4票",
