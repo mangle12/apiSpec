@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <title>歸戶資料確認</title>
+
+    <meta charset="utf-8" />
+
+    <meta name="function-id" content="BTC101W" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/bundled/newThirdparty.js"
+    ></script>
+
+    <title>BTC101W</title>
+
+    <style id="anti-clickjack"></style>
+    <script type="text/javascript">
+      if (self === top) {
+        var antiClickjack = document.getElementById("anti-clickjack");
+        antiClickjack.parentNode.removeChild(antiClickjack);
+      } else {
+        top.location = self.location;
+      }
+    </script>
+
+    <link rel="shortcut icon" href="/APCONSUMER/images/favicon.ico" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/APCONSUMER/styles/bundled/theme.css?v=67d90c1279ba5c0a600ffa755fcbaa65"
+    />
+
+    <!--[if lte IE 9]>
+      <script src="/APCONSUMER/scripts/common/console-api-shiv.js?v=2ba16dfed8ca35b82b90fccd1251c90f"></script>
+    <![endif]-->
+
+    <link
+      href="/APCONSUMER/styles/style.css?v=bf7ffd1ddc712ac1f365671d572369d8"
+      rel="stylesheet"
+    />
+    <link
+      href="/APCONSUMER/styles/mobile.css?v=1de3ea8e1c658d7ebd501660a3c4ddd0"
+      rel="stylesheet"
+    />
+    <link
+      href="/APCONSUMER/styles/modal.css?v=5a024ad0f0a9fb9cd290ff6630b26772"
+      rel="stylesheet"
+    />
+    <link
+      href="/APCONSUMER/styles/customersservice.css?v=630e96996909072627d1097300a85727?version=20220708"
+      rel="stylesheet"
+    />
+    <!--	<base href="APCONSUMER">-->
+
+    <style type="text/css">
+      .help-block {
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body data-ng-app="btc101wApp">
+    <div id="evn_header">
+      <button
+        class="sr-only sr-only-focusable"
+        type="button"
+        title="跳到主要內容區塊"
+        tabindex="1"
+        onclick="angular.element('#centerDiv').focus()"
+      >
+        跳到主要內容區塊
+      </button>
+    </div>
+    <div class="loading">
+      <noscript
+        >您的瀏覽器不支援JavaScript功能，若網頁功能無法正常使用時，請開啟瀏覽器JavaScript狀態。</noscript
+      >
+      <div id="circleG">
+        <div id="circleG_1" class="circleG"></div>
+        <div id="circleG_2" class="circleG"></div>
+        <div id="circleG_3" class="circleG"></div>
+      </div>
+    </div>
+    <header>
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            id="einvoice_menu"
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar"
+            aria-expanded="false"
+            aria-controls="navbar"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a
+            class="navbar-brand"
+            href="https://wwwtest.einvoice.nat.gov.tw/"
+            title="財政部電子發票整合服務平台"
+          >
+            <img
+              src="/APCONSUMER/images/logo.png?v=066234d283a4e8acddcbaba3aa3d07ff"
+              alt=""
+            />
+            <div class="env_right">
+              <h1>
+                財政部
+                <span>E-Invoice Platform</span>
+              </h1>
+              <h2>電子發票整合服務平台</h2>
+            </div>
+          </a>
+        </div>
+        <div class="env_service">
+          <a
+            href="#"
+            title="Alt+U：上方相關資訊區塊，其他相關連結區。"
+            accesskey="U"
+            >:::</a
+          >
+          <small>客服專線：0800-521-988</small>
+        </div>
+      </div>
+    </header>
+    <div class="env_topArea">
+      <div class="env_bg"></div>
+    </div>
+
+    <nav
+      id="navbar"
+      class="navbar navbar-inverse navbar-static-top navbar-collapse collapse env-menu"
+      data-ng-controller="eMenuController"
+      function-id="BTC101W"
+    >
+      <ul class="nav navbar-nav">
+        <li
+          class="dropdown hidden-sm hidden-md hidden-lg"
+          data-ng-show="user.realm == 'GUEST'"
+        >
+          <a href="#" class="dropdown-toggle">
+            <span>
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+              {{user.name}}
+            </span>
+            <span style="display: none">訪客姓名</span>
+          </a>
+        </li>
+        <li
+          class="dropdown hidden-sm hidden-md hidden-lg"
+          data-ng-show="user.realm == 'MOBILE'"
+        >
+          <a href="#" class="dropdown-toggle">
+            <span>
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+              手機條碼
+            </span>
+          </a>
+          <div>
+            <ul>
+              <li
+                style="
+                  text-align: left;
+                  padding: 10px 0px 0px 20px;
+                  border: 0px;
+                  pointer-events: none;
+                  color: #fff;
+                "
+              >
+                手機號碼：{{user.mobile}}<br />
+                手機條碼：{{user.carrierId2}}<br />
+                電子信箱：{{user.email}}{{user.emailChecked ? '(已驗證)' :
+                '(未驗證)'}}
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li
+          class="dropdown hidden-sm hidden-md hidden-lg"
+          data-ng-show="user.realm == 'NATURAL'"
+        >
+          <a href="#" class="dropdown-toggle">
+            <span>
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+              自然人憑證
+            </span>
+          </a>
+          <div>
+            <ul>
+              <li
+                style="
+                  text-align: left;
+                  padding: 10px 0px 0px 20px;
+                  border: 0px;
+                  pointer-events: none;
+                  color: #fff;
+                "
+              >
+                姓名：{{user.name}}<br />
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li
+          class="dropdown"
+          data-ng-repeat="group in menu"
+          data-menu-finish
+          einvoice-menu-group="{{group.id}}"
+          title="{{group.description}}"
+        >
+          <a
+            href="#"
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            data-ng-click="toggle(group.id)"
+            >{{group.cname}}</a
+          >
+          <div class="dropdown-menu" data-ng-show="group.children.length > 0">
+            <ul>
+              <li
+                data-ng-repeat="item in group.children"
+                einvoice-menu-item="{{item.id}}"
+                einvoice-menu-parent="{{group.id}}"
+                title="{{item.description}}"
+              >
+                <a href="{{item.url}}">{{item.cname}}</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="dropdown" data-ng-switch="user.realm">
+          <a
+            data-ng-switch-when="MOBILE"
+            href="https://wwwtest.einvoice.nat.gov.tw/APCONSUMER/Logout"
+            title="登出"
+          >
+            <span class="navbar-nav">登出</span>
+          </a>
+          <a
+            data-ng-switch-when="NATURAL"
+            href="https://wwwtest.einvoice.nat.gov.tw/APCONSUMER/Logout"
+            title="登出"
+          >
+            <span class="navbar-nav">登出</span>
+          </a>
+          <a
+            data-ng-switch-when="GUEST"
+            href="https://wwwtest.einvoice.nat.gov.tw/index?open=b3Blbg"
+            title="登入"
+          >
+            <span class="navbar-nav">登入</span>
+          </a>
+        </li>
+        <li
+          class="dropdown hidden-xs"
+          style="float: right"
+          data-ng-show="user.realm == 'GUEST'"
+        >
+          <a href="#" class="dropdown-toggle">
+            <span class="navbar-nav">
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+              {{user.name}}
+            </span>
+            <span style="display: none">訪客姓名</span>
+          </a>
+        </li>
+        <li
+          class="dropdown hidden-xs"
+          style="float: right"
+          data-ng-show="user.realm == 'MOBILE'"
+          einvoice-menu-group="USERINFO_MOBILE"
+        >
+          <a
+            href="#"
+            class="dropdown-toggle"
+            data-ng-click="toggle('USERINFO_MOBILE')"
+          >
+            <span class="navbar-nav">
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+              手機條碼
+            </span>
+          </a>
+          <div class="dropdown-menu">
+            <ul
+              copied="手機號碼：{{user.mobile}},手機條碼：{{user.carrierId2}},電子信箱:{{user.email}}"
+            >
+              <li
+                class="navbar-nav"
+                style="
+                  float: right;
+                  border: 0px;
+                  text-align: left;
+                  pointer-events: none;
+                  color: #fff;
+                "
+              >
+                手機號碼：{{user.mobile}}<br />
+                手機條碼：{{user.carrierId2}}<br />
+                電子信箱：<span style="white-space: pre-wrap"
+                  >{{user.email}}</span
+                >{{user.emailChecked ? '(已驗證)' : '(未驗證)'}}
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li
+          class="dropdown hidden-xs"
+          style="float: right"
+          data-ng-show="user.realm == 'NATURAL'"
+          einvoice-menu-group="USERINFO_NATURAL"
+        >
+          <a
+            href="#"
+            class="dropdown-toggle"
+            data-ng-click="toggle('USERINFO_NATURAL')"
+          >
+            <span class="navbar-nav">
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+              自然人憑證
+            </span>
+          </a>
+          <div class="dropdown-menu">
+            <ul>
+              <li
+                class="text-success"
+                style="
+                  float: right;
+                  border: 0px;
+                  text-align: left;
+                  pointer-events: none;
+                  color: #fff;
+                "
+              >
+                姓名：{{user.name}}<br />
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <!-- 主要內容 -->
+    <div class="container env_topMargin" data-ng-controller="btc101wController">
+      <!-- 提示訊息列 -->
+
+      <div
+        id="alertArea"
+        data-ng-controller="compostHeaderAppController"
+        style="background-color: transparent; box-shadow: none"
+      >
+        <alert
+          data-ng-repeat="alert in alerts"
+          type="{{alert.type}}"
+          close="closeAlert($index)"
+        >
+          <span data-ng-bind-html="alert.msg"></span>
+        </alert>
+      </div>
+
+      <!-- 標題 -->
+      <div class="env_bannerTitle" data-ng-show="!displayMessage">
+        <img
+          src="/APCONSUMER/images/titlePrev.png?v=ea55e7865c5f6e4d7553bdd2d7222f32"
+          alt=""
+          class="env_PrevBg"
+        />
+        <div class="wrap">
+          <h3>歸戶資料確認</h3>
+        </div>
+        <img
+          src="/APCONSUMER/images/titleNext.png?v=0be56bb5ff9b31aa4ec0ea54de8d6960"
+          alt=""
+          class="env_NextBg"
+        />
+      </div>
+      <!-- 說明訊息 -->
+      <div class="panel panel-default" data-ng-show="!displayMessage">
+        <div class="panel-body">
+          <div class="form-horizontal env_form">
+            <!-- card_ban -->
+            <div class="form-group">
+              <label for="card_ban" class="col-sm-3 control-label">
+                <span>共通性載具</span>
+              </label>
+              <div class="col-sm-9 help-block">
+                <span>{{carrierData.displayId}}</span>
+              </div>
+            </div>
+            <!-- card_no1 -->
+            <div class="form-group">
+              <label for="card_no1" class="col-sm-3 control-label">
+                <span>會員載具類別</span>
+              </label>
+              <div class="col-sm-9 help-block">
+                <span>{{carrierData.codeName}}</span>
+              </div>
+            </div>
+            <!-- card_no2 -->
+            <div class="form-group">
+              <label for="card_no2" class="col-sm-3 control-label">
+                <span>載具明碼</span>
+              </label>
+              <div class="col-sm-9 help-block">
+                <span>{{carrierData.carrierId1}}</span>
+              </div>
+            </div>
+
+            <!-- card_type -->
+            <div class="form-group">
+              <label for="card_type" class="col-sm-3 control-label">
+                <span>載具隱碼</span>
+              </label>
+              <div class="col-sm-9 help-block">
+                <span>{{carrierData.carrierId2}}</span>
+              </div>
+            </div>
+
+            <!-- button -->
+            <div class="form-group">
+              <div class="col-sm-offset-3 col-sm-9">
+                <button
+                  id="close_button"
+                  style="display: none"
+                  class="btn btn-primary"
+                  type="button"
+                  data-ng-click="closeWindow()"
+                >
+                  關閉視窗
+                </button>
+                <button
+                  id="aggregate_button"
+                  class="btn btn-primary"
+                  type="button"
+                  data-ng-click="doAggregateCarrier()"
+                  data-ng-disabled="doAggregateCarrierButtonDisabled"
+                >
+                  確認
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default" data-ng-show="displayMessage">
+        <div class="panel-body">
+          <div class="col-sm-offset-5 col-sm-7 help-block">
+            <h4>請關閉此頁面</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container" style="font-size: 14px">
+        <div class="row">
+          <div
+            class="col-sm-offset-1 col-sm-8 col-md-offset-1 col-md-7 col-lg-offset-1 col-lg-7"
+          >
+            <div class="row">
+              <p class="col-md-6">
+                瀏覽人數：
+                <span>266340734</span>
+              </p>
+              <p class="col-md-6">
+                最近更新日期：
+                <span>2022-11-07</span>
+              </p>
+            </div>
+            <div class="row">
+              <p class="col-md-6">客服專線：0800-521-988</p>
+              <p class="col-md-6">客服傳真：(02)8192-7431</p>
+            </div>
+            <div class="row">
+              <p class="col-md-12">
+                機關地址：11002 臺北市信義區忠孝東路四段547號
+              </p>
+            </div>
+            <div class="row">
+              <p class="col-md-12">電子發票整合服務平台 版權所有</p>
+            </div>
+            <div class="row">
+              <p class="col-md-12">Copyrights © 2018 All Rights Reserved</p>
+            </div>
+          </div>
+          <div class="col-sm-3 col-md-4 col-lg-4 env_textInline">
+            <ul>
+              <li>
+                <a
+                  href="https://accessibility.moda.gov.tw/Applications/Detail?category=20220331092405"
+                  title="無障礙網站(另開視窗)"
+                  target="_blank"
+                >
+                  <img
+                    src="/APCONSUMER/images/accessibility2.0A.png?v=149c56e6dc25e092e6d29dda700d0e79"
+                    title="無障礙網站(另開視窗)"
+                    alt="通過A無障礙網頁檢測"
+                    border="0"
+                    width="88"
+                    height="31"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://www.gov.tw/"
+                  title="我的e政府(另開視窗)"
+                  target="_blank"
+                >
+                  <img
+                    src="/APCONSUMER/images/GOV.png?v=20b08090199856ded008269217b75a7b"
+                    title="我的e政府(另開視窗)"
+                    alt="我的e政府(另開視窗)"
+                    height="45"
+                  />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/einvoice178?ref=ts&amp;fref=ts"
+                  title="財政部財政資訊中心facebook粉絲團(另開新網頁)"
+                  target="_blank"
+                >
+                  <img
+                    src="/APCONSUMER/images/fbIcon.png?v=f6a1d428415aec7cfedc2fa0ca3d20ea"
+                    title="財政部財政資訊中心facebook粉絲團(另開新網頁)"
+                    alt="財政部財政資訊中心facebook粉絲團(另開新網頁)"
+                  />
+                </a>
+              </li>
+              <!--
+							<li>
+								<a href="#" title="無障礙標章">
+									<img th:src="@{/images/ccessibility.png}" alt="" height="45" />
+								</a>
+							</li>
+							 -->
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr class="featurette-divider" />
+      <div class="container" style="font-size: 14px">
+        <div class="row">
+          <div class="text-center">
+            <ul class="evn_links">
+              <li
+                style="
+                  display: inline-block;
+                  border-right: 1px solid #ffffff;
+                  padding: 0 15px;
+                "
+              >
+                <a
+                  style="color: #ffffff"
+                  href="/index!showCopyRights"
+                  title="著作權聲明"
+                  >著作權聲明</a
+                >
+              </li>
+              <li
+                style="
+                  display: inline-block;
+                  border-right: 1px solid #ffffff;
+                  padding: 0 15px;
+                "
+              >
+                <a
+                  style="color: #ffffff"
+                  href="/index!showSecurity"
+                  title="網站安全政策"
+                  >網站安全政策</a
+                >
+              </li>
+              <li
+                style="
+                  display: inline-block;
+                  border-right: 1px solid #ffffff;
+                  padding: 0 15px;
+                "
+              >
+                <a
+                  style="color: #ffffff"
+                  href="/index!showPrivacy"
+                  title="隱私權政策"
+                  >隱私權政策</a
+                >
+              </li>
+              <li style="display: inline-block; padding: 0 15px">
+                <a
+                  style="color: #ffffff"
+                  href="https://www.einvoice.nat.gov.tw/index!showGovOpenInfo"
+                  title="政府網站資料開放宣告"
+                  >政府網站資料開放宣告</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/libs/EinvoiceMy97DatePicker/WdatePicker.js?v=c11fdbd6e20076833c92b52b292d3f7c"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/common/compatibility.js?v=a19a7fa19aaebcd27c45b44d5fceefcf"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/cht.global.js?v=fa513a8077113467ba8ddccd34e9502c"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/user.js?v=d5ce7d97eee9e4a2dc8276aaeeabe537"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/serviceLocator.js?v=e5f2141c1e3db13b6e5fe24e4ec66798"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/environment.js?v=837b004ce52d1728ac00c1ac9d6cd2b5"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/defaultCsrfRetriever.js?v=a4dc08cff6ee96d783f529783655de16"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/crossContextCsrfRetriever.js?v=a8106967714aff061c8704b9250c2a7a"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/csrfRetrieverSelector.js?v=5952be6dea60279afefcfbc82107a218"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/cAlert.js?v=04a3020441717b7a4f122fe82c23d3b7"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/bootboxWrapper.js?v=fa10ee98e912fb4a09cceda101a3bf63"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/resourceWrapper.js?v=340d0819bc1d036780b64017f9034aaf"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/stateManager.js?v=153aec96131f0c0a521ebecbbd7bb325"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/strings.js?v=cbf4a9edaa137fa19cf251d6b341e9a4"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/dateUtil.js?v=f4f7c31779afa1106d18ddd696d751b7"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/commonValidator.js?v=9226ff934422b0242b08883c66f34bf3"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/customValidation.js?v=20da646c39b3c27f7da203509ea3376d"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/cTable.js?v=617d3f59a7903a3d604e1f2246ea9faa"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/keycodeMapper.js?v=a06eac8ac5b01f4e482979d2da0e420c"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/doms.js?v=36eddc35c38eb7bed9e3b9e7eefe5889"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/encodings.js?v=6568f686789a842855aca665d0061328"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/files.js?v=c5a411a2c7c928da66b72d0aeb6da665"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/pseudoEvents.js?v=d45db4d7b6750203f4e89473c763eba2"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/requestDecorator.js?v=217f16c5d5ec5408d0598944aaed4362"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/urls.js?v=2120cde2ad76ab5a7ff6ff2a7aa3ce3f"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/report.js?v=44685f696a467853f96d1c464e6000c4"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/print.js?v=870e5ba7e91563fbda13ca75848a6f4a"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/idle.js?v=be1313ac1a4c00d00e461b52bf43d4ff"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eDatePicker.js?v=402e7acb7370b3fc9999b96cff2eb1ab"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/directives/validations.js?v=abef0b9364afb832813329a7e71117fb"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/directives/enterTab.js?v=12d706d2cae52d00424aa6c40ce59d92"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/directives/formatters.js?v=cf2da2e252ba9b5117428f37699cea01"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/directives/editableSelect.js?v=1e0845ab2440766aa76ecc46d3390f4f"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/directives/menu.js?v=d98734ace675dfc4c21aa69323015de8"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/directives/shortcut.js?v=06ce5f300142c0e78a469faee0448573"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/directives/tabs.js?v=06b9413d1abed70288e4c3dae5b613a2"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/ngGridPlugins.js?v=0f6116b0c469e88bb29d5f9dee4314d7"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/directives/focus.js?v=d9b4da527e05bb955a6623e8f86c26b9"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/directives/event.js?v=db40887d0fbe04edf03bc1b1698fbc10"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/directives/draggableModal.js?v=8de74d788fc62a71eb9781ad55aab1e3"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/directives/bootboxShortcut.js?v=020f1f3be11650928a2645be7086ff8e"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/directives/modalShortcut.js?v=6003e1bdbcda19bb54bd86472050366c"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/bundled/chromeSelectFix.js?v=b5b5085620a96362bd806561591b0261"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/dialog.js?v=4cd631d66ba4ca1427e67c67bfff72af"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/confirmDialogOptionBuilder.js?v=06bd84db2c67848e20933515dc50aa1c"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/uiblock.js?v=f980ff7897995c3c423367592fa14e19"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/random.js?v=40d57442738f1d944e788c5279b6b266"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/trace-id-http-interceptor.js?v=64e6816884825b5eb7d9a729bdca9381"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/filter/date.js?v=954f124ae01719fa21bc395ad55464a7"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/cCompost.js?v=0d43c650707ca7ee8480840d36f6049e"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/common/disableDraggableModal.js?v=7fc095a54ceca60feb6e75a77f6718e5"
+    ></script>
+
+    <script>
+      var environment = { properties: { contextPath: "\/APCONSUMER" } };
+      window.name = "NG_DEFER_BOOTSTRAP!";
+      var contextRoot = undefined;
+      if (environment && environment.properties) {
+        contextRoot = environment.properties.contextPath;
+      }
+
+      window.deferredBootstrapper
+        .bootstrap({
+          element: document.getElementById("compostHeaderApp"),
+          module: "compost",
+          bootstrapConfig: {
+            strictDi: true,
+          },
+          resolve: {
+            compostProperties: [
+              "$http",
+              function ($http) {
+                return $http.get(contextRoot + "/api-cht/properties/front-end");
+              },
+            ],
+          },
+        })
+        .then(function () {
+          angular.resumeBootstrap();
+        });
+
+      angular.module("compost").run([
+        "cServiceLocator",
+        "userInternal",
+        function (cServiceLocator, userInternal) {
+          var environment = { properties: { contextPath: "\/APCONSUMER" } };
+          var sso = null;
+
+          var cEnvironment = cServiceLocator.get("cEnvironment");
+          if (cEnvironment) {
+            if (environment && environment.properties) {
+              angular.forEach(environment.properties, function (value, key) {
+                if (key == "contextPath") {
+                  cEnvironment.contextRoot(value);
+                } else {
+                  cEnvironment.property(key, value);
+                }
+              });
+            }
+            cEnvironment.property("sso", sso);
+            userInternal.setUser(null);
+          }
+        },
+      ]);
+
+      angular.module("compost").config([
+        "blockUIConfig",
+        function (blockUIConfig) {
+          blockUIConfig.autoInjectBodyBlock = false;
+        },
+      ]);
+    </script>
+
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/common/main.js?v=cdc624715927afdfcfffb4772948ed70"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/common/jsencrypt.js?v=dafc1753f4bc7fdd5ea093646c406001"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/common/hashCreditCard.js?v=1b97fd5939bc95fe186223c2dc10ac76"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/libs/errorcode.js?v=11618f7a339aecd6f9039ac60e164939"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/libs/hicos.js?v=c37fbf86b19080df8a7869acf3084ff0"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eMenu.js?v=fd16174ad56c3f5c2d0d94964a37021a"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eUserInfo.js?v=b29465486d2d17fcefbfca7dfce8cfbb"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eCardReader.js?v=8c8202271131d08d6306b23242242b23"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eDonateXcaSelector.js?v=fc38792854d4de5bc163fe1bc225458a"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eCompanySelector.js?v=1895975586120c4a46a65c69ddf6f064"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eConfirm.js?v=ead00f2e3b9ad2a11a5e5f975713fc0b"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eAlert.js?v=c53279eac2a27d3b417d977379c99813"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eAllowance.js?v=356801fedc90a09a5ed95dccd441d620"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eCaptcha.js?v=d9dd5989231cc88e88c19ea68de0f8d6"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eCarrierValidator.js?v=c4a776a87010774881ad10ac40ce8703"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/ePagination.js?v=c5dea6aef7b7965467a8d0d8f2e5c66f"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eInvoice.js?v=16068c8e19dc80bcdbc2b04e3eba660c"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/customersservice.js?v=d5ef454de5e2953d3bf2a402c37b81eb?version=20220708"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eClientInfo.js?v=06429059e43ab66717dffcd5fc2287e6"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eBreadcrumbs.js?v=449214d03195f6a46c0148b1413eec1c"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eFilters.js?v=191caa6492972c54b9b322cd311423ca"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eCompost.js?v=fde71b0635bbc8646dfb70ceef608fb0"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eChangePassword.js?v=9e0788589c63d62beb16d2212f8c3afb"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eMobileAwardSetting.js?v=1541b9ed20ae4f7f444cb6bf4b056c6f"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eMobileAddSubCard.js?v=d3ec4b3b8f74d3a783debe6ff126127f"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/module/eEasyCardReader.js?v=ea1a6503f2513e4cdd70828f7d561c8b"
+    ></script>
+
+    <div>
+      <script>
+        (function (i, s, o, g, r, a, m) {
+          i["GoogleAnalyticsObject"] = r;
+          (i[r] =
+            i[r] ||
+            function () {
+              (i[r].q = i[r].q || []).push(arguments);
+            }),
+            (i[r].l = 1 * new Date());
+          (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m);
+        })(
+          window,
+          document,
+          "script",
+          "//www.google-analytics.com/analytics.js",
+          "ga"
+        );
+        ga("create", "UA-60884031-3", "auto");
+        ga("send", "pageview");
+      </script>
+    </div>
+    <div title-name="BTC101W"></div>
+
+    <div class="evn_customer">
+      <a href="#" class="customersservice" title="智能客服(另開新視窗)">
+        <img src="../images/robot.png" alt="" />
+        <img src="../images/hive_Over.png" alt="" />
+        <span>智能客服(另開新視窗)</span>
+      </a>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="/APCONSUMER/scripts/btc101w.js?v=24e5c40a718393cec82dc36ff18014ba"
+    ></script>
+  </body>
+</html>
